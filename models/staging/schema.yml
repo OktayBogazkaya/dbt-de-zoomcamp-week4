@@ -9,6 +9,7 @@ sources:
     tables:
       - name: external_green_tripdata_2019_2020
       - name: external_yellow_tripdata_2019_2020
+      - name: fhv_tripdata_2019
 
 models:
     - name: staging_green_tripdata
