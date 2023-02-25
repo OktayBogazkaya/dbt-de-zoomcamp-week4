@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-fhv_data as (
+with fhv_data as (
     select * from {{ ref('staging_fhv_tripdata_2019') }}
 ), 
 
@@ -8,6 +8,7 @@ dim_zones as (
     select * from {{ ref('dim_zones') }}
     where borough != 'Unknown'
 )
+
 select 
     fhv_data.pickup_locationid, 
     pickup_zone.borough as pickup_borough, 
